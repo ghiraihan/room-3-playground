@@ -7,16 +7,16 @@ app.use(express.urlencoded());
 const PORT = 6666;
 
 // todo : Controller
-const lihat_history = require("./controller/lihat-history");
-const hitungLuas = require("./controller/hitung-luas");
-const hitungKeliling =require("./controller/hitung-keliling");
+const lihatHistoryController = require("./controller/lihat-history");
+const luasBelahKetupat = require("./controller/hitung-luas");
+const kelilingBelahKetupat =require("./controller/hitung-keliling");
 
 // todo : Routing
-server.get("/lihat-history", lihat_history);
+app.get("/lihat-history", lihatHistoryController);
 
-server.post('/hitung-luas', hitungLuas)
+app.post('/hitung-luas', luasBelahKetupat);
 
-server.post('/hitung-keliling', hitungKeliling)
+app.post('/hitung-keliling', kelilingBelahKetupat);
 
 app.listen(PORT, function () {
     console.log(`Server berjalan di localhost:${PORT}`);

@@ -1,6 +1,6 @@
 const history = require("../model/history");
 
-function hitungLuas(req, res) {
+function luasBelahKetupat(req, res) {
   const data = req.body;
   const d1 = data.d1;
   const d2 = data.d2;
@@ -15,4 +15,4 @@ function hitungLuas(req, res) {
   });
 }
 
-module.exports = hitungLuas;
+module.exports = luasBelahKetupat;
