@@ -7,6 +7,13 @@ function kelilingBelahKetupat (req, res) {
  
     // 2. hitung keliling
     const keliling = 4*sisi;
+    res.status(200).send("Keliling:" + keliling);
+
+  history.push({
+    sisi: sisi,
+    Keliling: keliling,
+    status : "sukses"
+  });
 };
 
 module.exports = kelilingBelahKetupat;
