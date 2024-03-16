@@ -1,39 +1,23 @@
-const express = require('express');
-const PORT = 3555;
-
+// 1. panggil dulu module expressnya
+const express = require ('express');
 const app = express();
+
 app.use(express.urlencoded());
+// // 3. Running servernya
+const PORT = 6666;
 
-//CONTROLLER
-const lihatHistory = require('./controller/lihat-history')
-;
-// ROUTING
+// todo : Controller
+const lihat_history = require("./controller/lihat-history");
+const hitungLuas = require("./controller/hitung-luas");
+const hitungKeliling =require("./controller/hitung-keliling");
 
-app.get('/hitung-luas', function(req, res){
-    const data = req.body;
-    console.log("data:", data);
-    const d1 = data.d1;
-    const d2 = data.d2;
-    const luas = d1 * d2 /2;
-    res.status(201).json({
-        status: "success",
-        d1: d1,
-        d2: d2,
-        luas: luas
-    })
-});
-app.post('/hitung-keliling', function(req, res) {
-    const data = req.body;
-    const sisi = data.sisi
-    const keliling = 4 * sisi
-    res.status(201).json({
-        status: "success",
-        sisi: sisi,
-        keliling: keliling
-    });
-});
-app.get('/lihat-history', lihatHistory); 
+// todo : Routing
+server.get("/lihat-history", lihat_history);
 
-app.listen(PORT, function() {
-    console.log(`Server berjalan di localhost:${PORT}`)
+server.post('/hitung-luas', hitungLuas)
+
+server.post('/hitung-keliling', hitungKeliling)
+
+app.listen(PORT, function () {
+    console.log(`Server berjalan di localhost:${PORT}`);
 });
