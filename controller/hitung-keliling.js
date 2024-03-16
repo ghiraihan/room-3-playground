@@ -7,7 +7,7 @@ function kelilingBelahKetupat (req, res) {
 
     // 2. hitung keliling
     const keliling = 4*sisi;
-    res.status(200).send("Keliling:" + keliling);
+    res.status(200).send(`belah ketupat sisi ${sisi}, keliling nya adalah ${keliling}`);
     
   history.push({
     sisi: sisi,

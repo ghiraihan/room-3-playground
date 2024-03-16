@@ -7,11 +7,18 @@ app.use(express.urlencoded());
 const PORT = 1495;
 
 // todo : Controller
-const lihatHistoryController = require("./controller/lihat-history");
-const luasBelahKetupat = require("./controller/hitung-luas");
-const kelilingBelahKetupat =require("./controller/hitung-keliling");
+const lihatHistoryController = require("./controller/lihat-history.js");
+const luasBelahKetupat = require("./controller/hitung-luas.js");
+const kelilingBelahKetupat =require("./controller/hitung-keliling.js");
 
 // todo : Routing
+app.get('/hitung-luas', function(req, res){
+    res.status(200).sendFile(__dirname + "/view/index-luas.html");
+});
+app.get('/hitung-keliling', function(req, res){
+    res.status(200).sendFile(__dirname + "/view/index-keliling.html");
+});
+
 app.get("/lihat-history", lihatHistoryController);
 
 app.post('/hitung-luas', luasBelahKetupat);
