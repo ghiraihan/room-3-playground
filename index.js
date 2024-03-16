@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.urlencoded());
 // // 3. Running servernya
-const PORT = 6666;
+const PORT = 1495;
 
 // todo : Controller
 const lihatHistoryController = require("./controller/lihat-history");
